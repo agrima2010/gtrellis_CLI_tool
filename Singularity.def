@@ -1,0 +1,17 @@
+Bootstrap: docker
+From: continuumio/miniconda3:4.12.0
+
+%files
+    environment.yml /tmp/environment.yml
+
+%post
+    apt-get update && apt-get install -y wget bzip2 && rm -rf /var/lib/apt/lists/*
+    conda env create -f /tmp/environment.yml
+    conda clean -afy
+
+%environment
+    source activate r-env
+    export PATH=/opt/conda/envs/r-env/bin:$PATH
+
+%runscript
+    exec "$@"
