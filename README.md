@@ -5,13 +5,14 @@ Using gtrellis tool to create genome level trellis graph for visualization from 
 This project was developed using an Apptainer (formerly Singularity) container built from a Conda environment. The container ensures reproducibility across HPC systems such as UPPMAX and other Linux clusters.
 
 # Clone repository
+```bash
 git clone <repo>
-
 cd gtrellis_CLI_tool
-
+```
 # Build the container
+```bash
 apptainer build r-gtrellis.sif Singularity.def
-
+```
 This creates an Apptainer image containing:
 
 - R
@@ -20,8 +21,9 @@ This creates an Apptainer image containing:
 - all other dependencies listed in environment.yml
 
 # Usage
+```bash
 apptainer exec /path/to/file/r-gtrellis.sif Rscript plot_bed_tracks.R X_normal.regions.bed X_tumor.regions.bed
-
+```
 # Note
 This project uses Apptainer to package the complete software stack, ensuring identical versions of R and Bioconductor packages across systems. This makes the workflow reproducible on HPC clusters where users may not have administrative privileges.
 
