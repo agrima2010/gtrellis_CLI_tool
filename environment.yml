@@ -1,0 +1,15 @@
+name: r-env
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - r-base=4.4
+  - bioconductor-gtrellis
+  - bioconductor-genomicranges
+  - bioconductor-iranges
+  - bioconductor-s4vectors
+  - r-data.table
+  - r-ggplot2
+  - r-circlize
+  - r-biocmanager
+  - r-devtools
