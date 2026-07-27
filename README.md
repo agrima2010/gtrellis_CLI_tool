@@ -24,6 +24,16 @@ This creates an Apptainer image containing:
 ```bash
 apptainer exec /path/to/file/r-gtrellis.sif Rscript plot_bed_tracks.R X_normal.regions.bed X_tumor.regions.bed
 ```
+## Example Output
+
+The CLI generates genome-wide comparative visualizations of BED regions between normal and tumor samples across all chromosomes.
+
+<p align="center">
+  <img src="images/example_output.png" alt="Example GTrellis output" width="1000">
+</p>
+
+**Figure:** Genome-wide comparison of tumor (red) and normal (blue) BED track scores visualized using **GTrellis**. Each panel corresponds to a chromosome, with genomic positions shown along the x-axis and log10-transformed scores on the y-axis.
+
 # Note
 This project uses Apptainer to package the complete software stack, ensuring identical versions of R and Bioconductor packages across systems. This makes the workflow reproducible on HPC clusters where users may not have administrative privileges.
 
